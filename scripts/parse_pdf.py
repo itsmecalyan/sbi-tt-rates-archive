@@ -59,12 +59,20 @@ def _divide_by_100(value: str) -> str:
 
 
 def _parse_table_rows(markdown: str, warnings: list) -> list:
-    # Older PDFs say "LACS", newer say "LAKHS" — "BETWEEN" alone uniquely identifies this section
+    # Try the main marker first
     marker = "TRANSACTIONS BETWEEN"
     idx = markdown.find(marker)
     if idx == -1:
-        warnings.append("Reference rates section header not found in PDF content")
-        return []
+        # Fallback markers if the main header was split or changed (e.g. in mid-2026)
+        fallbacks = ["FOREX CARD RATES", "CURRENCY", "USD/INR"]
+        for fb in fallbacks:
+            idx = markdown.find(fb)
+            if idx != -1:
+                break
+                
+        if idx == -1:
+            warnings.append("Reference rates section header not found in PDF content")
+            return []
 
     section = markdown[idx:]
     currencies = []
