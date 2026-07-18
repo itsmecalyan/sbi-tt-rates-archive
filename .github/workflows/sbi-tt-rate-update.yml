@@ -23,7 +23,7 @@ jobs:
         FILE_NAME="$(date '+%Y-%m-%d-%H:%M').pdf"
         DIRECTORY="$YEAR/$MONTH"
         mkdir -p "$DIRECTORY"
-        wget -O "$DIRECTORY/$FILE_NAME" https://sbi.bank.in/documents/16012/1400784/FOREX_CARD_RATES.pdf
+        curl -f -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" -o "$DIRECTORY/$FILE_NAME" -L https://sbi.bank.in/documents/16012/1400784/FOREX_CARD_RATES.pdf
         echo "pdf_path=$DIRECTORY/$FILE_NAME" >> "$GITHUB_OUTPUT"
 
     - name: Commit and push changes
