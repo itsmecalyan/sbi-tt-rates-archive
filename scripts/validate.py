@@ -80,7 +80,7 @@ def validate(rates_dir: str = "rates") -> bool:
             if (curr - prev).days > 5:
                 warnings.append(
                     f"USD-INR gap of {(curr - prev).days} days: "
-                    f"{sorted_dates[i - 1]} → {sorted_dates[i]}"
+                    f"{sorted_dates[i - 1]} -> {sorted_dates[i]}"
                 )
 
     for w in warnings:
