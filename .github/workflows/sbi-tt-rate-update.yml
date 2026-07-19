@@ -1,4 +1,4 @@
-name: SBI TT Rate Update
+name: SBI TT Rate Update # Trigger Vercel Build
 
 on:
   schedule:
