@@ -2,7 +2,7 @@ name: SBI TT Rate Update # Trigger Vercel Build
 
 on:
   schedule:
-    - cron: '0 0,12 * * *'  # Runs the workflow at 00:00 and 12:00 UTC daily
+    - cron: '0 * * * *'  # Runs the workflow every hour on the hour
   workflow_dispatch:  # Allows manual triggering of the workflow
 
 jobs:
