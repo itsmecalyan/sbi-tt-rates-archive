@@ -2166,3 +2166,4 @@ date,source_file,currencies_found,status,parse_warnings,processed_at
 2026-11-02,2026/11/2026-11-02-07:21.pdf,0,failed,No module named 'pymupdf4llm',2026-11-02T07:21:38
 2026-11-02,2026/11/2026-11-02-17:54.pdf,30,success,,2026-11-02T17:54:59
 2026-11-03,2026/11/2026-11-03-07:38.pdf,30,success,,2026-11-03T07:39:05
+2026-11-04,2026/11/2026-11-04-08:51.pdf,30,success,,2026-11-04T08:51:09
